@@ -21,20 +21,20 @@ template = \
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm" style="height:50px;">
+        <div class="navbar navbar-dark bg-dark shadow-sm" style="height:40px;">
         </div>
     </header>
     <body>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"> IOT Dashboard </h1>
+                <h1 class="fw-light"> Team 3 Security System </h1>
                 <p class="lead text-muted">Jake Parnell, Kel Howell, Will Trolinger</p>
             </div>
         </div>
     </section>
     
-        <div class="album py-5 bg-light">
+        <div class="album py-5 bg-dark">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 
@@ -62,7 +62,7 @@ def generate_sensor_card(sensors=sensors):
                             <div class="d-felx justify-content-between-align-items-center">
                                 <form action='toggleSensor' method='POST'>
                                     <input type='hidden' name='sensor' value='{sns}'>
-                                    <input type='submit' value='Refresh' class='btn btn-primary'>
+                                    <input type='submit' value='Refresh' class="btn btn-outline-primary shadow-none disabled flex-fill mx-1">
                                 </form>
                             </div>
                         </div>
@@ -89,14 +89,21 @@ def generate_sensor_card(sensors=sensors):
                             <p class="card-text">{sns}</p>
                             <p class="card-text">Is on: {status}</p>
                             <div class="d-felx justify-content-between-align-items-center">
+                                <div class = "btn-toolbar pull-right">
                                 <form action='turn_left' method='POST'>
                                     <input type='hidden' name='sensor' value='{sns}'>
-                                    <input type='submit' value='Turn Left' class='btn btn-primary'>
+                                    <input type='submit' value='Left' class="btn btn-outline-primary shadow-none disabled flex-fill mx-1">
+                            
                                 </form>
+
+                                
                                 <form action='turn_right' method='POST'>
                                     <input type='hidden' name='sensor' value='{sns}'>
-                                    <input type='submit' value='Turn Right' class='btn btn-primary'>
+                                    <input type='submit' value='Right'class="btn btn-outline-primary shadow-none disabled flex-fill mx-1">
                                 </form>
+                            </div>
+
+                                
                             </div>
                         </div>
                     </div>
@@ -115,7 +122,7 @@ def generate_sensor_card(sensors=sensors):
                             <div class="d-felx justify-content-between-align-items-center">
                                 <form action='toggleSensor' method='POST'>
                                     <input type='hidden' name='sensor' value='{sns}'>
-                                    <input type='submit' value='Toggle' class='btn btn-primary'>
+                                    <input type='submit' value='Toggle' class="btn btn-outline-primary shadow-none disabled flex-fill mx-1">
                                 </form>
                             </div>
                         </div>
